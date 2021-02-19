@@ -66,3 +66,31 @@ def check_permutations(str1, str2):
         return False
     return True
 
+
+def palindrome_permutations(in_str):
+    """
+    Given a string, write a function to check if it is a permutation of a palindrome.
+    A palindrome is a word or phrase that is the same forwards and backwards. A permutation
+    is a rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
+
+    :param in_str: Input string to check for palindrome permutations e.g. "tact coa"
+    :returns: True if the given string has pertubations that are palindrome e.g. ["taco cat", "atco eta"]
+    """
+
+    sorted_str = ''.join(sorting.quicksort(list(in_str))).lstrip(' ')
+    i = 0
+    tmp = list()
+    while i < len(sorted_str):
+        try:
+            if sorted_str[i] == sorted_str[i+1]:
+                i += 1
+            else:
+                tmp.append(sorted_str[i])
+        except IndexError:
+            tmp.append(sorted_str[i])
+        i += 1
+    if len(tmp) > 1:
+        return False
+    else:
+        return True
+
