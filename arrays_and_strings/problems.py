@@ -1,5 +1,6 @@
 from arrays_and_strings import sorting
 
+
 def is_unique(arr):
     """
     Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
